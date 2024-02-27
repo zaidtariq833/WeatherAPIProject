@@ -11,5 +11,13 @@
   font-style: normal;
   margin-top: 20px;
   font-size: 60px;
-  color: #17B169;
+  color: #17b169;
+}
+
+@media only screen and (max-width: 582px) {
+  .weather_text{
+    font-size: 30px;
+  }
+
+  
 }
