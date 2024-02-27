@@ -14,7 +14,6 @@ body {
 
 .main_weather_ui .input-search-bar {
   display: flex;
-  align-items: center;
   justify-content: center;
   margin-top: 20px;
 }
@@ -156,12 +155,77 @@ body {
   padding: 30px;
 }
 
-/* .image_weather {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-} */
+.main_weather_ui .weather_info .time-zone {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
+  -webkit-box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
+  -moz-box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.main_weather_ui .weather_info .time-zone .timezone-text {
+  font-family: "Quicksand", sans serif;
+  color: crimson;
+}
+
+.main_weather_ui .weather_info .time-zone .timezone-hours {
+  font-family: "Quicksand", sans serif;
+  color: #3eb489;
+  font-weight: bold;
+}
+
+.main_weather_ui .weather_info .wind-measurements {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
+  -webkit-box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
+  -moz-box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.main_weather_ui .weather_info .wind-measurements .wind {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main_weather_ui .weather_info .wind-measurements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_weather_ui .weather_info .wind-measurements .wind-text {
+  font-family: "Quicksand", sans serif;
+  color: crimson;
+}
+
+.main_weather_ui .weather_info .wind-measurements .wind-fields {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main_weather_ui .weather_info .wind-measurements .wind-fields .wind-degree,
+.wind-gust,
+.wind-speed {
+  color: crimson;
+  font-family: "Quicksand", sans serif;
+}
+
+.main_weather_ui
+  .weather_info
+  .wind-measurements
+  .wind-fields
+  .wind-degree-text,
+.wind-gust-text,
+.wind-speed-text {
+  color: #3eb489;
+  font-family: "Quicksand", sans serif;
+}

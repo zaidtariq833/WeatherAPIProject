@@ -1,0 +1,42 @@
+.next-weather-cards {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.next-weather-cards .next-weather-degree .next-weather-div {
+  text-align: center;
+}
+
+.next-weather-cards .next-weather-degree .next-weather-div .next-weather-icon {
+  color: yellow;
+  font-size: 32px;
+}
+
+.next-weather-cards
+  .next-weather-degree
+  .next-weather-location
+  .next_weather_name,
+.next_weather_now {
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.next-weather-cards
+  .next-weather-degree
+  .next-weather-degree-condition
+  .next_weather_degree {
+  color: yellow;
+  text-align: center;
+}
+
+.next-weather-cards
+  .next-weather-degree
+  .next-weather-degree-condition
+  .next-weather-update {
+  color: gold;
+  text-align: center;
+}
