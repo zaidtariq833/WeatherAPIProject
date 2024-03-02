@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Weather.css";
-import Thunder from "../assets/thunder.jpg";
 import { FaCity } from "react-icons/fa6";
 import { FaWind } from "react-icons/fa";
 import { TbWindElectricity } from "react-icons/tb";
@@ -11,6 +10,10 @@ import { FiSunrise } from "react-icons/fi";
 import { GiWindyStripes } from "react-icons/gi";
 import NextDaysWeather from "../nextDaysWeather/NextDaysWeather";
 import moment from "moment";
+import BrokenClouds from "../assets/broken-clouds.jpg";
+import ClearSky from "../assets/clear-sky.jpg";
+import ScatteredClouds from "../assets/scattered-clouds.jpg";
+import Thunder from "../assets/thunder.jpg";
 
 const Weather = () => {
   // clear sky , broken clouds , scattered clouds ,
@@ -96,9 +99,25 @@ const Weather = () => {
     windGustCalculation(gust);
   }, [cityDetails]);
 
+  const weatherDescription = weather?.data?.list[0]?.weather[0]?.description
+
   return (
     <>
-      <div className="main_weather_ui">
+      <div
+        className="main_weather_ui"
+        style={{
+          backgroundImage:
+          weatherDescription == "broken clouds"
+              ? `url(${BrokenClouds})`
+              : weatherDescription == "scattered clouds"
+              ? `url(${ScatteredClouds})`
+              : weatherDescription == "clear sky"
+              ? `url(${ClearSky})`
+              : weatherDescription == "thunder"
+              ? `url(${Thunder})`
+              : null,
+        }}
+      >
         <div className="input-search-bar">
           <input
             type="text"
@@ -122,7 +141,9 @@ const Weather = () => {
                   </h1>
                   <h3 className="date_now">
                     {/* {moment().format(weather?.data?.list[0]?.dt_txt)} */}
-                    {moment().format(weather?.data?.list[0]?.dt_txt)}
+                    {moment(weather?.data?.list[0]?.dt_txt).format(
+                      "MMMM Do YYYY, h:mm:ss a"
+                    )}
                   </h3>
                 </div>
                 <div className="degree-div">
@@ -207,7 +228,7 @@ const Weather = () => {
                 </div>
               </div>
             </div>
-            <NextDaysWeather />
+            <NextDaysWeather data={weather} />
           </>
         ) : null}
       </div>

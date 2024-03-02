@@ -1,11 +1,24 @@
-body {
+/* clear sky */
+/* background: linear-gradient(to bottom, #87ceeb, #1e90ff); */
+
+/* scattered clouds */
+/* background: linear-gradient(to bottom, #cccccc, #ffffff); */
+
+/* thunder cloud */
+/*   background: linear-gradient(to bottom, #666666, #000000); */
+
+/* overcast clouds */
+/*   background: linear-gradient(to bottom, #dddddd, #aaaaaa);
+ */
+
+/* body {
   background: linear-gradient(to bottom, #dddddd, #aaaaaa);
   width: 100%;
   height: 100vh;
   background: url("../assets/scattered-clouds.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 .main_weather_ui .search-city-text {
   text-align: center;
@@ -50,7 +63,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
   -webkit-box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
   -moz-box-shadow: 2px 3px 28px 4px rgba(133, 125, 125, 0.75);
@@ -81,19 +93,6 @@ body {
   font-weight: 100;
 }
 
-/* clear sky */
-/* background: linear-gradient(to bottom, #87ceeb, #1e90ff); */
-
-/* scattered clouds */
-/* background: linear-gradient(to bottom, #cccccc, #ffffff); */
-
-/* thunder cloud */
-/*   background: linear-gradient(to bottom, #666666, #000000); */
-
-/* overcast clouds */
-/*   background: linear-gradient(to bottom, #dddddd, #aaaaaa);
- */
-
 .city_name {
   color: crimson;
   font-family: "Quicksand", sans-serif;
@@ -118,6 +117,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
+  justify-content: center;
   /* text-align: center; */
   /* z-index: 1; */
 }
@@ -230,14 +230,135 @@ body {
   font-family: "Quicksand", sans serif;
 }
 
-@media only screen and (max-width: 582px) {
-  .main_weather_ui .search-city-text {
-    text-align: center;
-    margin-top: 20px;
+@media only screen and (max-width: 1196px) {
+  .main_weather_ui .weather_info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  body {
+    height: 100%;
+  }
+  .main_weather_ui .weather_info .city-icon {
+    color: dodgerblue;
+    font-size: 30px;
+    margin-left: 20px;
   }
 
+  .city_name {
+    color: crimson;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .date_now {
+    font-family: "Poppins", sans-serif;
+    color: gold;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .city_degree {
+    color: #3eb489;
+    font-family: "Smooth Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
+    white-space: nowrap;
+  }
+
+  .main_weather_ui .weather_info .city-degree .weather-update {
+    color: purple;
+    font-family: "Smooth Sans", sans serif;
+    font-size: 15px;
+  }
+
+  .main_weather_ui .weather_info .feels-like .feel-degree {
+    color: #3eb489;
+    font-size: 40px;
+    font-family: "Smooth Sans", sans-serif;
+    font-weight: 100;
+  }
+
+  .main_weather_ui .weather_info .feels-like .feels-like-text {
+    color: crimson;
+    font-family: "Quicksand", sans-serif;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 752px) {
+  .main_weather_ui .weather_info .city-icon {
+    color: dodgerblue;
+    font-size: 30px;
+    margin-left: 20px;
+  }
+
+  .city_name {
+    color: crimson;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .date_now {
+    font-family: "Poppins", sans-serif;
+    color: gold;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  .city_degree {
+    color: #3eb489;
+    font-family: "Smooth Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align: center;
+    font-size: 30px;
+    white-space: nowrap;
+  }
+
+  .main_weather_ui .weather_info .city-degree .weather-update {
+    color: purple;
+    font-family: "Smooth Sans", sans serif;
+    font-size: 15px;
+  }
+
+  .main_weather_ui .weather_info .feels-like .feel-degree {
+    color: #3eb489;
+    font-size: 35px;
+    font-family: "Smooth Sans", sans-serif;
+    font-weight: 100;
+  }
+
+  .main_weather_ui .weather_info .feels-like .feels-like-text {
+    color: crimson;
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 686px) {
+  .main_weather_ui .weather_info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 640px) {
   .main_weather_ui .input_search {
-    padding: 10px;
+    padding: 20px;
     border-radius: 20px 0px 0px 20px;
     outline: none;
     border: none;
@@ -245,10 +366,50 @@ body {
     font-weight: bold;
     width: 50%;
   }
+}
 
-  .main_weather_ui .input-search-bar {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+@media only screen and (max-width: 434px) {
+  .city_degree {
+    color: #3eb489;
+    font-family: "Smooth Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .main_weather_ui .weather_info .feels-like .feel-degree {
+    color: #3eb489;
+    font-size: 20px;
+    font-family: "Smooth Sans", sans-serif;
+    font-weight: 100;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .city_name {
+    color: crimson;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .main_weather_ui .weather_info .city-icon {
+    color: dodgerblue;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  .city_degree {
+    color: #3eb489;
+    font-family: "Smooth Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align: center;
+    font-size: 15px;
+    white-space: nowrap;
   }
 }

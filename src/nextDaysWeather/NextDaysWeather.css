@@ -23,6 +23,7 @@
   color: #fff;
   white-space: nowrap;
   text-align: center;
+  font-size: 12px;
 }
 
 .next-weather-cards
@@ -40,3 +41,5 @@
   color: gold;
   text-align: center;
 }
+
+
